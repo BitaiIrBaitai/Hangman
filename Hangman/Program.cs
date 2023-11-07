@@ -12,6 +12,108 @@ string[] words =
 	"MOUSEPAD",
 	"MONITOR"
 };
+string[] hangmans = new string[]
+{
+	// 0
+	"""
+	 +----+ 
+	 |    |  
+	 |    o
+	 |   /|\
+	 |    |
+	 |   / \
+	 |
+	-+--------
+	""",
+	// 1
+	"""
+	 +----+ 
+	 |    |  
+	 |    o
+	 |   /|\
+	 |    |
+	 |   / 
+	 |
+	-+--------
+	""",
+	// 2
+	"""
+	 +----+ 
+	 |    |  
+	 |    o
+	 |   /|\
+	 |    |
+	 |    
+	 |
+	-+--------
+	""",
+	// 3
+	"""
+	 +----+ 
+	 |    |  
+	 |    o
+	 |   /|
+	 |    |
+	 |   
+	 |
+	-+--------
+	""",
+	// 4
+	"""
+	 +----+ 
+	 |    |  
+	 |    o
+	 |    |
+	 |    |
+	 |   
+	 |
+	-+--------
+	""",
+	// 5
+	"""
+	 +----+ 
+	 |    |  
+	 |    o
+	 |    
+	 |    
+	 |   
+	 |
+	-+--------
+	""",
+	// 6
+	"""
+	 +----+ 
+	 |    |  
+	 |    
+	 |    
+	 |    
+	 |   
+	 |
+	-+--------
+	""",
+	// 7
+	"""
+	 +----+ 
+	 |      
+	 |    
+	 |    
+	 |    
+	 |   
+	 |
+	-+--------
+	""",
+	// 8
+	"""
+	 +    
+	 |      
+	 |    
+	 |    
+	 |    
+	 |   
+	 |
+	-+--------
+	"""
+};
 string selectedWord = words[Random.Shared.Next(0, words.Length)];
 string usedLetters = "";
 int health = MAX_HEALTH;
@@ -24,7 +126,10 @@ while (true)
 {
 	Console.Clear();
 
-	Console.ForegroundColor = ConsoleColor.Red;
+	Console.ForegroundColor = ConsoleColor.Blue;
+	Console.WriteLine(hangmans[health]);
+
+    Console.ForegroundColor = ConsoleColor.Red;
 	for (int i = 0; i < health; i++)
 		Console.Write("♥");
 
